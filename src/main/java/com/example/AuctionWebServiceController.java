@@ -26,7 +26,7 @@ public class AuctionWebServiceController {
 	
 	@Path("json/AuctionList")
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	public AuctionList getAuctionList(
 			@DefaultValue("") @QueryParam("token") String token,
 			@DefaultValue("") @QueryParam("userid") String userID,
