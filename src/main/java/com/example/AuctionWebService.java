@@ -8,12 +8,12 @@ import javax.ws.rs.core.MediaType;
 /**
  * Auction Web Service
  */
-@Path("auctionwebservice")
+@Path("AuctionWebService")
 public class AuctionWebService {
 
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
-	public String getItems() {
+	public String getIt() {
 		return "Items!";
 	}
 }
