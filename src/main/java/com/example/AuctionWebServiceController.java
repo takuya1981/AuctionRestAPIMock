@@ -23,14 +23,14 @@ public class AuctionWebServiceController {
 	
 	@Path("json/AuctionList")
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String getAuctionList(
+	@Produces("application/json")
+	public AuctionList getAuctionList(
 			@DefaultValue("") @QueryParam("token") String token,
 			@DefaultValue("") @QueryParam("userid") String userID,
 			@DefaultValue("0") @QueryParam("minprice") int minPrice,
 			@DefaultValue("10000000") @QueryParam("maxprice") int maxPrice,
 		    @DefaultValue("0") @QueryParam("categoryID") int categoryID){
-		return "Items";
+		return new AuctionList("a00001", "This is Auction List");
 	}
 	
 	@Path("json/AuctionItem")
