@@ -33,9 +33,9 @@ public class AuctionWebServiceController {
 			@DefaultValue("0") @QueryParam("minprice") int minPrice,
 			@DefaultValue("10000000") @QueryParam("maxprice") int maxPrice,
 		    @DefaultValue("0") @QueryParam("categoryID") int categoryID){
-		AuctionList list = new AuctionList("a00001", "This is Auction List");
-		list.items.add(new AuctionItem());
-		list.items.add(new AuctionItem());
+		AuctionList list = new AuctionList(10, 2, 1);
+		list.items.add(new AuctionItem("0001", "010", "攻殻機動隊 STAND ALONE COMPLEX", "サトウ", "satou1990", 8000, 2, "2015-09-21T12:00:00+12:00"));
+		list.items.add(new AuctionItem("0002", "010", "スラムダンク DVD-BOX全巻", "スズキ", "axel0088", 37500, 7, "2015-12-01T12:00:00+09:00"));
 		return list;
 	}
 	
