@@ -1,5 +1,8 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -30,7 +33,10 @@ public class AuctionWebServiceController {
 			@DefaultValue("0") @QueryParam("minprice") int minPrice,
 			@DefaultValue("10000000") @QueryParam("maxprice") int maxPrice,
 		    @DefaultValue("0") @QueryParam("categoryID") int categoryID){
-		return new AuctionList("a00001", "This is Auction List");
+		AuctionList list = new AuctionList("a00001", "This is Auction List");
+		list.items.add(new AuctionItem());
+		list.items.add(new AuctionItem());
+		return list;
 	}
 	
 	@Path("json/AuctionItem")

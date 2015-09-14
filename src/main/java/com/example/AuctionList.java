@@ -1,19 +1,21 @@
 package com.example;
 
-import javax.xml.bind.annotation.XmlElement;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class AuctionList {
-	@XmlElement
 	public String id;
-	@XmlElement
 	public String name;
+	public List<AuctionItem> items;
 	
 	public AuctionList(){}
 	
 	public AuctionList(String id, String name){
 		this.id = id;
 		this.name = name;
+		items = new ArrayList<>();
 	}
 }
