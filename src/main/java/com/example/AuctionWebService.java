@@ -14,6 +14,13 @@ public class AuctionWebService {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getIt() {
-		return "Items!";
+		return "Get it!";
+	}
+	
+	@Path("GetItems")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String GetItems(){
+		return "Items";
 	}
 }
