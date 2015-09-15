@@ -50,6 +50,8 @@ public class AuctionWebServiceModel {
 	
 	public int registerAuctionItem(String userID, String user, String categoryID, String title, int startPrice, int reservePrice, int bidOrBuy, String startDate, String endDate, String itemStatus, String comment, Boolean returnable)
 	{
+		// TODO token, userIDのチェック
+		// TODO 引数のデータをチェック
 		try {
 			String auctionID = String.format("%1$09d", Math.random() * 100000000);
 			

@@ -65,10 +65,10 @@ public class AuctionWebServiceController {
 			@QueryParam("itemStatus") String itemStatus,
 			@QueryParam("comment") String comment,
 			@QueryParam("returnable") Boolean returnable){
-		// TODO token, userIDのチェック
-		// TODO 引数のデータをチェック
-		// TODO 引数のデータを登録
-		
+		AuctionWebServiceModel model = new AuctionWebServiceModel();
+		model.registerAuctionItem(userID, user, categoryID, title, startPrice,
+				reservePrice, bidOrBuy, startDate, endDate, itemStatus, comment, returnable);
+
 	}
 	
 	@Path("AuctionBid")
