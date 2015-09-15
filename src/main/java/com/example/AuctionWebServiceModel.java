@@ -64,7 +64,7 @@ public class AuctionWebServiceModel {
 	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID +
 	        		"', '" + startPrice + "', '" + startPrice + "', '" + reservePrice + "', '" + bidOrBuy + "', '0'" + 
 	        		"', '" + startDate + "', '" + endDate + "', '" + itemStatus + "', '" + comment + "', '" + returnable.toString() + 
-	        		"', '', '', '出品中'");  
+	        		"', '', '', '出品中')");  
 		} catch (URISyntaxException | SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
