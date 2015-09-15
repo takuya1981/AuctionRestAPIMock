@@ -22,13 +22,18 @@ public class AuctionWebServiceModel {
 		return list;
 	}
 	
-	public AuctionItemDetail getAuctionItemDetail()
+	public AuctionItemDetail getAuctionItemDetail(String auctionID)
 	{
 		AuctionItemDetail item = new AuctionItemDetail();
 		try {
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
 	        stmt.executeUpdate("UPDATE");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM tbl where auctionID = " + auctionID);
+			while(rs.next()){
+				item = new AuctionItemDetail(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14),rs.getBoolean(15), rs.getString(16), rs.getString(17), rs.getString(18));
+			}
+
 		} catch (URISyntaxException | SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();

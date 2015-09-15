@@ -37,12 +37,6 @@ public class AuctionWebServiceController {
 		
 		AuctionWebServiceModel model = new AuctionWebServiceModel();
 		return model.getAuctionItemList();
-		
-		// 仮のデータを返却
-//		AuctionItemList list = new AuctionItemList(10, 2, 1);
-//		list.items.add(new AuctionItem("0001", "010", "攻殻機動隊 STAND ALONE COMPLEX", "サトウ", "satou1990", 8000, 2, "2015-09-21T12:00:00+12:00"));
-//		list.items.add(new AuctionItem("0002", "010", "スラムダンク DVD-BOX全巻", "スズキ", "axel0088", 37500, 7, "2015-12-01T12:00:00+09:00"));
-//		return list;
 	}
 	
 	@Path("AuctionItemDetail.json")
@@ -55,9 +49,8 @@ public class AuctionWebServiceController {
 		// TODO token, userIDのチェック
 		// TODO auctionIDを基にデータを取得
 		
-		// 仮のデータを返却
-		AuctionItemDetail item = new AuctionItemDetail("0001", "010", "攻殻機動隊 STAND ALONE COMPLEX", "サトウ", "satou1990", 3000, 5000, 7000, 10000, 2, "2015-09-16T12:00:00+12:00", "2015-09-21T12:00:00+12:00", "新品", "’93年10月から’96年3月までテレビ朝日系で放送された井上雄彦原作の超人気バスケットボール・アニメ「SLAM DUNK」が初のDVD化。", false, "田中", "tnaka3333", "出品中");
-		return item;
+		AuctionWebServiceModel model = new AuctionWebServiceModel();
+		return model.getAuctionItemDetail(auctionID);
 	}
 	
 	@Path("AuctionItem")
