@@ -32,8 +32,7 @@ public class AuctionWebServiceController {
 			@DefaultValue("10000000") @QueryParam("maxprice") int maxPrice,
 		    @DefaultValue("0") @QueryParam("page") int page,
 		    @DefaultValue("0") @QueryParam("itemStatus") String itemStatus){
-		// TODO token, userIDのチェック
-		// TODO 引数を基にデータを取得
+
 		
 		AuctionWebServiceModel model = new AuctionWebServiceModel();
 		return model.getAuctionItemList();
@@ -45,10 +44,7 @@ public class AuctionWebServiceController {
 	public AuctionItemDetail getAuctionItemDetail(
 			@DefaultValue("") @QueryParam("token") String token,
 			@DefaultValue("") @QueryParam("userid") String userID,
-			@DefaultValue("0") @QueryParam("auctionID") String auctionID){
-		// TODO token, userIDのチェック
-		// TODO auctionIDを基にデータを取得
-		
+			@DefaultValue("0") @QueryParam("auctionID") String auctionID){	
 		AuctionWebServiceModel model = new AuctionWebServiceModel();
 		return model.getAuctionItemDetail(auctionID);
 	}
@@ -57,7 +53,8 @@ public class AuctionWebServiceController {
 	@POST
 	public void postAuctionItem(
 			@QueryParam("token") String token,
-			@QueryParam("userid") String userID,
+			@QueryParam("userID") String userID,
+			@QueryParam("user") String user,
 			@QueryParam("categoryID") String categoryID,
 			@QueryParam("title") String title,
 			@QueryParam("startPrice") int startPrice,
@@ -71,16 +68,18 @@ public class AuctionWebServiceController {
 		// TODO token, userIDのチェック
 		// TODO 引数のデータをチェック
 		// TODO 引数のデータを登録
+		
 	}
 	
 	@Path("AuctionBid")
 	@PUT
 	public void putAuctionBid(
 			@QueryParam("token") String token,
-			@QueryParam("userid") String userID,
+			@QueryParam("userID") String userID,
+			@QueryParam("user") String user,
 			@QueryParam("auctionID") String auctionID,
 			@QueryParam("bidPrice") String bidPrice){
 		AuctionWebServiceModel model = new AuctionWebServiceModel();
-		model.updateBidder(token, userID, auctionID, bidPrice);
+		model.updateBidder(userID, user, auctionID, bidPrice);
 	}
 }
