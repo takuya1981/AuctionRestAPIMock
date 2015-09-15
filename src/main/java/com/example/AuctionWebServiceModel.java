@@ -5,9 +5,10 @@ import java.net.URISyntaxException;
 import java.sql.*;
 
 public class AuctionWebServiceModel {
+	// TODO 引数を受け取ってクエリを構築
 	public AuctionItemList getAuctionItemList()
 	{
-		AuctionItemList list = new AuctionItemList();
+		AuctionItemList list = new AuctionItemList(100, 10, 1);
 		try {
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
@@ -24,7 +25,7 @@ public class AuctionWebServiceModel {
 	
 	public AuctionItemDetail getAuctionItemDetail(String auctionID)
 	{
-		AuctionItemDetail item = new AuctionItemDetail();
+		AuctionItemDetail item = null;
 		try {
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
