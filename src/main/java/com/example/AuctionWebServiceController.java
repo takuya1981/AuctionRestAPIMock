@@ -2,6 +2,7 @@ package com.example;
 
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -9,7 +10,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Auction Web Service
+ * Auction Web Service Controller
  */
 @Path("AuctionWebService/v1")
 public class AuctionWebServiceController {
@@ -23,7 +24,7 @@ public class AuctionWebServiceController {
 	@Path("AuctionItemList.json")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-	public AuctionItemList getAuctionList(
+	public AuctionItemList getAuctionItemList(
 			@QueryParam("token") String token,
 			@QueryParam("userid") String userID,
 		    @QueryParam("categoryID") int categoryID,
@@ -44,7 +45,7 @@ public class AuctionWebServiceController {
 	@Path("AuctionItemDetail.json")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-	public AuctionItemDetail getAuctionItem(
+	public AuctionItemDetail getAuctionItemDetail(
 			@DefaultValue("") @QueryParam("token") String token,
 			@DefaultValue("") @QueryParam("userid") String userID,
 			@DefaultValue("0") @QueryParam("auctionID") String auctionID){
@@ -57,8 +58,8 @@ public class AuctionWebServiceController {
 	}
 	
 	@Path("AuctionItem")
-	@PUT
-	public void putAuctionItem(
+	@POST
+	public void postAuctionItem(
 			@QueryParam("token") String token,
 			@QueryParam("userid") String userID,
 			@QueryParam("categoryID") String categoryID,
@@ -83,8 +84,7 @@ public class AuctionWebServiceController {
 			@QueryParam("userid") String userID,
 			@QueryParam("auctionID") String auctionID,
 			@QueryParam("bidPrice") String bidPrice){
-		// TODO token, userIDのチェック
-		// TODO 引数のデータをチェック
-		// TODO auctionIDをkeyにbidPriceとhighestUserを更新する
+		AuctionWebServiceModel model = new AuctionWebServiceModel();
+		model.updateBidder(token, userID, auctionID, bidPrice);
 	}
 }
