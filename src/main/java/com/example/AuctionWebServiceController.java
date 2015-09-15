@@ -35,11 +35,14 @@ public class AuctionWebServiceController {
 		// TODO token, userIDのチェック
 		// TODO 引数を基にデータを取得
 		
+		AuctionWebServiceModel model = new AuctionWebServiceModel();
+		return model.getAuctionItemList();
+		
 		// 仮のデータを返却
-		AuctionItemList list = new AuctionItemList(10, 2, 1);
-		list.items.add(new AuctionItem("0001", "010", "攻殻機動隊 STAND ALONE COMPLEX", "サトウ", "satou1990", 8000, 2, "2015-09-21T12:00:00+12:00"));
-		list.items.add(new AuctionItem("0002", "010", "スラムダンク DVD-BOX全巻", "スズキ", "axel0088", 37500, 7, "2015-12-01T12:00:00+09:00"));
-		return list;
+//		AuctionItemList list = new AuctionItemList(10, 2, 1);
+//		list.items.add(new AuctionItem("0001", "010", "攻殻機動隊 STAND ALONE COMPLEX", "サトウ", "satou1990", 8000, 2, "2015-09-21T12:00:00+12:00"));
+//		list.items.add(new AuctionItem("0002", "010", "スラムダンク DVD-BOX全巻", "スズキ", "axel0088", 37500, 7, "2015-12-01T12:00:00+09:00"));
+//		return list;
 	}
 	
 	@Path("AuctionItemDetail.json")
