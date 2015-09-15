@@ -53,7 +53,7 @@ public class AuctionWebServiceModel {
 		// TODO token, userIDのチェック
 		// TODO 引数のデータをチェック
 		try {
-			String auctionID = String.format("%1$09d", Math.random() * 100000000);
+			String auctionID = String.valueOf((int)(Math.random() * 10000000));
 			
 			Connection con = getConnection();
 	        Statement stmt = con.createStatement();
