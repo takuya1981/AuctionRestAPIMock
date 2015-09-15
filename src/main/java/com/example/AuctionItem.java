@@ -1,7 +1,4 @@
 package com.example;
-import java.util.Date;
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -13,7 +10,6 @@ public class AuctionItem {
 	public String sellerID;				// 出品者のID
 	public int currentPrice;			// 現在価格
 	public int bidsCount;				// 現在の入札数
-	//public List<String> highestBidders;	// 現在の最高額入札者
 	public String endDate;				// 終了予定時刻
 	
 	public AuctionItem(){
