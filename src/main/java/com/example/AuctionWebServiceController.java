@@ -14,13 +14,6 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("AuctionWebService/v1")
 public class AuctionWebServiceController {
-
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String getIt() {
-		return "Get it!";
-	}
-	
 	@Path("AuctionItemList.json")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
@@ -32,8 +25,6 @@ public class AuctionWebServiceController {
 			@DefaultValue("10000000") @QueryParam("maxprice") int maxPrice,
 		    @DefaultValue("0") @QueryParam("page") int page,
 		    @DefaultValue("0") @QueryParam("itemStatus") String itemStatus){
-
-		
 		AuctionWebServiceModel model = new AuctionWebServiceModel();
 		return model.getAuctionItemList();
 	}
