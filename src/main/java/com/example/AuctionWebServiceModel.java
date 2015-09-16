@@ -62,9 +62,9 @@ public class AuctionWebServiceModel {
 	        		"reserve_price, big_or_buy, bids_count, start_date, end_date, item_status, comment, " +
 	        		"returnable, highest_bidder, highest_bidder_id, status)" + 
 	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID +
-	        		"', '" + startPrice + "', '" + startPrice + "', '" + reservePrice + "', '" + bidOrBuy + "', 0" + 
-	        		"', '" + startDate + "', '" + endDate + "', '" + itemStatus + "', '" + comment + "', '" + returnable.toString() + 
-	        		"', '', '', '出品中')");  
+	        		"', " + startPrice + ", " + startPrice + ", " + reservePrice + ", " + bidOrBuy + ", 0" + 
+	        		"', '" + startDate + "', '" + endDate + "', '" + itemStatus + "', '" + comment + "', " + returnable.toString() + 
+	        		", '', '', '出品中')");  
 		} catch (URISyntaxException | SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
