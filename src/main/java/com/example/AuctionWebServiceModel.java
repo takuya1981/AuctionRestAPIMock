@@ -55,8 +55,10 @@ public class AuctionWebServiceModel {
 		try {
 			String auctionID = String.valueOf((int)(Math.random() * 10000000));
 			String query = "INSERT INTO tbl " + 
-	        		"(auction_id, category_id, title, seller, seller_id)" + 
-	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID + "')";
+	        		"(auction_id, category_id, title, seller, seller_id, " +
+					"start_price)" +
+	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID + "'" +
+					"" + String.valueOf(startPrice) + ")";
 			System.out.println(query);
 			
 			Connection con = getConnection();
