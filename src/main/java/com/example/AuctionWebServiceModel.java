@@ -58,11 +58,11 @@ public class AuctionWebServiceModel {
 			Connection con = getConnection();
 	        Statement stmt = con.createStatement();
 	        stmt.executeUpdate("INSERT INTO tbl " + 
-	        		"(auction_id, category_id, title, seller, seller_id, start_price, current_price) + // , " +
+	        		"(auction_id, category_id, title, seller, seller_id)　//, start_price, current_price , " +
 //	        		"reserve_price, big_or_buy, bids_count, start_date, end_date, item_status, comment, " +
 //	        		"returnable, highest_bidder, highest_bidder_id, status)" + 
-	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID +
-	        		"', " + startPrice + ", " + startPrice + ")"); //", " + reservePrice + ", " + bidOrBuy + ", 0" + 
+	        		"VALUES('" + auctionID  +"', '" + categoryID + "', '" + title + "', '" + user +  "', '" + userID + ")");
+//	        		"', " + startPrice + ", " + startPrice + ", " + reservePrice + ", " + bidOrBuy + ", 0" + 
 //	        		"', '" + startDate + "', '" + endDate + "', '" + itemStatus + "', '" + comment + "', " + returnable.toString() + 
 //	        		", '', '', '出品中')");  
 		} catch (URISyntaxException | SQLException e) {
